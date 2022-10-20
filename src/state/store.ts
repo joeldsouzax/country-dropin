@@ -1,5 +1,6 @@
 /** @format */
 
+import { api } from '@/services';
 import { configureStore } from '@reduxjs/toolkit';
 import country from './country';
 import {
