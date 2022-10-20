@@ -5,7 +5,7 @@ import { Provider } from 'react-redux';
 import { RouterProvider } from 'react-router-dom';
 import { persistStore } from 'redux-persist';
 import { PersistGate } from 'redux-persist/integration/react';
-import store from './state';
+import store from './store';
 import router from './router';
 
 const App: React.FC = () => {

@@ -26,13 +26,14 @@ const persistedCountry = persistReducer(persistConfig, country);
 const store = configureStore({
   reducer: {
     country: persistedCountry,
+    [api.reducerPath]: api.reducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
       serializableCheck: {
         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
       },
-    }),
+    }).concat(api.middleware),
 });
 
 export type RootState = ReturnType<typeof store.getState>;
