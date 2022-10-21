@@ -10,7 +10,7 @@ const ErrorPage: React.FC = () => {
     <div id="country-dropin-error-page">
       <h1>Welp!</h1>
       <h2>Something went wrong</h2>
-      <h4>{error.message || error.statusText}</h4>
+      <h4>{error.message != null || error.statusText}</h4>
     </div>
   );
 };
