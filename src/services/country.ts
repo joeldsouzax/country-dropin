@@ -8,7 +8,8 @@ const countryApi = api.injectEndpoints({
   endpoints: (build) => ({
     // eslint-disable-next-line @typescript-eslint/no-invalid-void-type
     getCountries: build.query<GetCountriesResponse, void>({
-      query: () => countries,
+      query: () =>
+        countries + '?' + 'access_key=' + import.meta.env.VITE_ACCESS_TOKEN,
       providesTags: (result) => {
         return result != null
           ? [

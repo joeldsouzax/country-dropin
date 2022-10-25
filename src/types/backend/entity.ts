@@ -1,6 +1,6 @@
 /** @format */
 
-export type Country = {
-  id: string;
+export interface Country {
+  numericCode: string;
   name: string;
-};
+}

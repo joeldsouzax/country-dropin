@@ -1,9 +1,12 @@
 /** @format */
 
+import { CountryList } from '@/components';
+import { countrySelector, useAppSelector } from '@/store';
 import * as React from 'react';
 
 const VisitedCountries: React.FC = () => {
-  return <h1>Visited Countries</h1>;
+  const countries = useAppSelector(countrySelector.selectAll);
+  return <CountryList countries={countries} isLoading={false} />;
 };
 
 export default VisitedCountries;
